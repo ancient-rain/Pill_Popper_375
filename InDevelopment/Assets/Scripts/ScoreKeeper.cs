@@ -24,10 +24,10 @@ public class ScoreKeeper : MonoBehaviour {
         }
         else
         {
-            currentStreakCount = 0;
+            currentStreakCount = 1;
         }
         lastTimeEnemyWasKilled = Time.time;
-        score += 5 + (int)Mathf.Pow(2, currentStreakCount);
+        score += 5 * currentStreakCount;
     }
 
     void onPlayerDeath()

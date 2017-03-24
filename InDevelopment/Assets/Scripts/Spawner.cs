@@ -52,7 +52,10 @@ public class Spawner : MonoBehaviour {
                 enemiesRemainingToSpawn--;
                 timeNextSpawn = Time.time + currentWave.timeBetweenSpawns;
                 StartCoroutine("spawnEnemy");
-                currentWave.timeBetweenSpawns -= 0.005f;
+                if (currentWave.timeBetweenSpawns > 0.25)
+                {
+                    currentWave.timeBetweenSpawns -= 0.005f;
+                }
             }
 
             if ((enemiesRemainingToSpawn > 0)&& Time.time > timeNextSpawn)

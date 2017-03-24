@@ -47,7 +47,15 @@ public class Spawner : MonoBehaviour {
                 CampPostionOld = playerT.position;
             }
 
-            if ((enemiesRemainingToSpawn > 0 || currentWave.infinite)&& Time.time > timeNextSpawn)
+            if(currentWave.infinite && Time.time > timeNextSpawn)
+            {
+                enemiesRemainingToSpawn--;
+                timeNextSpawn = Time.time + currentWave.timeBetweenSpawns;
+                StartCoroutine("spawnEnemy");
+                currentWave.timeBetweenSpawns -= 0.005f;
+            }
+
+            if ((enemiesRemainingToSpawn > 0)&& Time.time > timeNextSpawn)
             {
                 enemiesRemainingToSpawn--;
                 timeNextSpawn = Time.time + currentWave.timeBetweenSpawns;

@@ -6,11 +6,13 @@ public class Spawner : MonoBehaviour {
     public bool devMode;
     public Wave[] waves;
     public Enemy enemy;
+    public Powerup powerup;
     int enemiesRemainingToSpawn;
     float timeNextSpawn;
     float campingCheck = 2;
     float nextCheckTime;
     float campThresh = 1.5f;
+    float powerUpThreshHold = 98;
     bool camping;
     bool disable;
     Vector3 CampPostionOld;
@@ -64,6 +66,12 @@ public class Spawner : MonoBehaviour {
                 timeNextSpawn = Time.time + currentWave.timeBetweenSpawns;
                 StartCoroutine("spawnEnemy");
             }
+
+            float randomForPowerup = Random.Range(0, 100);
+            if(randomForPowerup > this.powerUpThreshHold)
+            {
+                StartCoroutine("spawnPoewerup");
+            }
         }
 
         if (devMode)
@@ -108,6 +116,26 @@ public class Spawner : MonoBehaviour {
         Enemy spawnedEnemy = (Enemy)Instantiate(enemy, randTile.position + Vector3.up, Quaternion.identity);
         spawnedEnemy.onDeath += onEnemyDeath;
         spawnedEnemy.setCharacteristics(currentWave.moveSpeed, currentWave.hitsToKillPlayer, currentWave.enemyHealth, currentWave.skinColor);
+    }
+
+    IEnumerator spawnPoewerup()
+    {
+        float spawnDelay = 1;
+        float flashSpeed = 4;
+        Transform randTile = map.getRandomOpenTile();
+
+        Material tileMat = randTile.GetComponent<Renderer>().material;
+        Color initColor = Color.white;
+        Color flash = Color.green;
+        float spawnTimer = 0;
+
+        while (spawnTimer < spawnDelay)
+        {
+            tileMat.color = Color.Lerp(initColor, flash, Mathf.PingPong(spawnTimer * flashSpeed, 1));
+            spawnTimer += Time.deltaTime;
+            yield return null;
+        }
+        Powerup spawnedPowerup = (Powerup)Instantiate(powerup, randTile.position + Vector3.up, Quaternion.identity);
     }
 
     void onEnemyDeath()

@@ -13,6 +13,8 @@ public class GameUI : MonoBehaviour {
     public Text newWaveTitle;
     public Text newWaveEnemyCount;
     public Text scoreUI;
+    public Text highscoreUI;
+    public Text highscoreValUI;
     public Text gameOverScoreUI;
     Spawner spawner;
     Player player;
@@ -26,6 +28,7 @@ public class GameUI : MonoBehaviour {
 
 	void Start () {
         FindObjectOfType<Player>().onDeath += onGameOver;
+        highscoreValUI.text = PlayerPrefs.GetInt("Highscore1").ToString();
 	}
 	
 	void Update () {
@@ -40,11 +43,59 @@ public class GameUI : MonoBehaviour {
 
     void onGameOver()
     {
+        int score = System.Int32.Parse(scoreUI.text);
+
         StartCoroutine(fade(Color.clear, new Color(0, 0, 0, 0.95f), 1));
         scoreUI.gameObject.SetActive(false);
+        highscoreUI.gameObject.SetActive(false);
+        highscoreValUI.gameObject.SetActive(false);
         healthBar.parent.gameObject.SetActive(false);
         gameOverScoreUI.text = scoreUI.text;
         gameOverUI.SetActive(true);
+        updateHighScores(score);
+    }
+
+    public void updateHighScores(int score)
+    {
+        int highscore1 = PlayerPrefs.GetInt("Highscore1");
+        int highscore2 = PlayerPrefs.GetInt("Highscore2");
+        int highscore3 = PlayerPrefs.GetInt("Highscore3");
+        int highscore4 = PlayerPrefs.GetInt("Highscore4");
+        int highscore5 = PlayerPrefs.GetInt("Highscore5");
+
+        if (score > highscore5)
+        {
+            PlayerPrefs.SetInt("Highscore5", score);
+
+            if (score > highscore4)
+            {
+                int tempScore = 0;
+                tempScore = PlayerPrefs.GetInt("Highscore4");
+                PlayerPrefs.SetInt("Highscore5", tempScore);
+                PlayerPrefs.SetInt("Highscore4", score);
+
+                if (score > highscore3)
+                {
+                    tempScore = PlayerPrefs.GetInt("Highscore3");
+                    PlayerPrefs.SetInt("Highscore4", tempScore);
+                    PlayerPrefs.SetInt("Highscore3", score);
+
+                    if (score > highscore2)
+                    {
+                        tempScore = PlayerPrefs.GetInt("Highscore2");
+                        PlayerPrefs.SetInt("Highscore3", tempScore);
+                        PlayerPrefs.SetInt("Highscore2", score);
+
+                        if (score > highscore1)
+                        {
+                            tempScore = PlayerPrefs.GetInt("Highscore1");
+                            PlayerPrefs.SetInt("Highscore2", tempScore);
+                            PlayerPrefs.SetInt("Highscore1", score);
+                        }
+                    }
+                }
+            }
+        }
     }
 
     public void returnToMainMenu()

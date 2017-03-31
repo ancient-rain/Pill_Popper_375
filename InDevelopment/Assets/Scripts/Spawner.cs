@@ -160,7 +160,10 @@ public class Spawner : MonoBehaviour {
         {
             AudioManager.instance.playSound2D("Level Complete");
         }
+
         waveNumber++;
+        PlayerPrefs.SetInt("Wave", waveNumber);
+
         if(waveNumber - 1 < waves.Length)
         {
             currentWave = waves[waveNumber - 1];

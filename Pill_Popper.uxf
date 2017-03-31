@@ -1,0 +1,1002 @@
+<?xml version="1.0" encoding="UTF-8"?><diagram program="umlet" version="13.3">
+  <zoom_level>4</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>544</x>
+      <y>60</y>
+      <w>168</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>AudioManager
+--
++ AudioChannel: enum
+soundEffect2DSource: AudioSource
++ masterVolumePercent: floar
++ soundEffectsVolumePercent: float
++ musicVolumePercent: float
+musicSources: AudioSource[]
+activeMusicSourceIndex int
+audioListener: Transform
+playerT: Transform
+library: SoundLibrary
+_+ instance: AudioManager_
+--
+Awake(): void
+Update(): void
++ playMusic(clip: AudioClip, fadeDurration): void
+musicFade(durration: float): IEnumerator
++ playSound(clip: AudioClip, position: Vector3): void
++ playSound(soundName: string, position: Vector3): void
++ setVolume(percent: float, channel: AudioChannel): void
++ playSound2D(name: String)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>308</x>
+      <y>276</y>
+      <w>296</w>
+      <h>164</h>
+    </coordinates>
+    <panel_attributes>Enemy
+--
+_+ onDeathStatistic: System.Action event_
+pathFinder: NavMeshAgent
++ State: enum
+currentState: State
+targetEnitity: LivingEntity
+skinMat: Material
+original: Color
+attackDistanceThreshold: float
+timeBetweenAttacks: float
+nextAttack: float
+damage: float
+myCollisionRadious: float
+targetCollisionRadius: float
+hasTarget: bool
++ deathEffect: ParticleSystem
+--
+Awake(): void
+# Start(): void
+onTargetDeath(): void
+Update(): void
+attack(): IEnumerator
++ setCharacteristics(moveSpeed: float, hitsToKillPlayer: int, enemyHealth: float, skinColor: Color): void
++ takeHit(damage: float, hitPoint: Vector3, hitDirection: Vector3): void
+updatePath(): IEnumerator
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>720</x>
+      <y>648</y>
+      <w>104</w>
+      <h>236</h>
+    </coordinates>
+    <panel_attributes>Gun
+--
++ FireMode: enum
++ fireMode: FireMode
++ muzzles: Transform[]
++ bullet: Projectile
++ shell: Transform
++ shellEjection: Transform
++ reloadTime: float
++ msBetweenShot: float
++ muzzleVelocity: float
++ recoilReturnSpeed: float
++ kickReturnSpeen: float
++ burstCount: int
++ bulletsPerMag: int
++ kickMinMax: Vector2
++ recoilMinMax: Vector2
++ shootAudio: AudioClip
++ reloadAudio: AudioClip
+muzzleFlash: MuzzleFlash
+triggerRelease: bool
+reloading: bool
+recoilSmoothDampVelocity: float
+startingPos: Vector3
+nextShotTime: float
+recoilAngle: float
+shotsRemainingInBurst: int
+remainingBulletsInMag: int
+--
+Start(): void
+LateUpdate(): void
+shoot(): void
++ reload(): void
+animateReload(): IEnumerator
++ onTriggerHold(): void
++ onTriggerRelease(): void
++ aim(aimPoint Vector3): void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>784</x>
+      <y>120</y>
+      <w>196</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+IDamageable
+--
+--
+takeHit(damage: float, hitPoint: Vector3, hitDirection: Vector3): void
+takeHitFromEnemy(damage: float): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>340</x>
+      <y>472</y>
+      <w>156</w>
+      <h>176</h>
+    </coordinates>
+    <panel_attributes>MapGenerator
+--
++ tilePrefab: Transform
++ obsPrefab: Transform
++ mapFloor: Transform
++ mask: Transform
++ realMapFloor: Transform
+tileMap: Transform[,]
++ maxSize: Vector2
++ outline: float
++ tileSize: float
++ maps: Map[]
++ mapIndex: int
+currentMap Map
+allCoords: List&lt;coord&gt;
+mixedCoords: Queue&lt;coord&gt;
+coord: struct
+--
+generateMap(): void
+toPosition(x: int, y: int): 
++ getRandomCoord(): coord
++ getRandomOpenTile(): Transform
+mapHasPath(obsMap: bool[,], currentCount: int): bool
+Awake(): void
+Update(): void
+getTileFromPosition(position: Vector3): Transform
++ onNewWave(waveNumber: int): void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>40</x>
+      <y>276</y>
+      <w>124</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>MusicManager (Inherits MonoBehaviour)
+--
++ mainTheme: AudioClip
++ menuTheme: AudioClip
+sceneName: string
+--
+Start(): void
+OnLevelWasLoaded(sceneIndex: int): void
+playMusic(): void
+Update(): void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>812</x>
+      <y>332</y>
+      <w>164</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>Player
+--
++ crossHair CrossHair
++ moveSpeed: float
+controller: PlayerController
+viewCamera: Camera
+gunController: GunController
+--
+# Start(): void
+Awake(): void
+Update(): void
+onNewWave(waveNumber: int): void
++ die(): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>608</x>
+      <y>728</y>
+      <w>104</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Powerup
+--
+myInt: int
+--
+Start(): void
+Update(): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1180</x>
+      <y>540</y>
+      <w>116</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>ScoreKeeper
+--
+_+ score: int_
+lastTimeEnemyWasKilled: float
+currentStreakCount: int
+streakExp: float
+--
+Start(): void
+onEnemyKilled(): void
+onPlayerDeath(): void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>304</x>
+      <y>96</y>
+      <w>140</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>SoundLibrary
+--
++ soundGroups: SoundGroup[]
+groupDictionary: Dictionary&lt;string, AudioClip[]&gt;
+--
+Awake(): void
++ getClipFromName(name: string)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>156</x>
+      <y>524</y>
+      <w>128</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>Utility
+--
+--
+_+ shuffleArray&lt;T&gt;(array: T[], seed: int): T[]_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>964</x>
+      <y>516</y>
+      <w>92</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>CrossHair
+--
++ targetMask: LayerMask
+initColor: Color
++ highlightColor: Color
++ dot SprtieRenderer
+--
+Start(): void
+Update(): void
++ detectTargets(ray: Ray): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1164</x>
+      <y>340</y>
+      <w>168</w>
+      <h>156</h>
+    </coordinates>
+    <panel_attributes>GameUI
+--
++ fadePlane: Image
++ gameOverUI: GameObject
++ newWaveBanner: RectTransform
++ healthBar: RectTransform
++ newWaveTitle: Text
++ newWaveEnemyCount: Text
++ scoreUI: Text
++ highscoreUI: Text
++ highscoreValUI: Text
++ gameOverScoreUI: Text
+spawner: Spawner
+player: Player
+--
+Awake(): void
+Start(): void
+Update(): void
+onGameOver(): void
++ updateHighScores(score: int): void
++ returnToMainMenu(): void
+onNewWave(waveNumber: int): void
+animateNewWave(): IEnumerator
+fade(initColor: Color, fadeTo: Color, time: int): IEnumerator
++ startNewGame(): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>784</x>
+      <y>184</y>
+      <w>204</w>
+      <h>68</h>
+    </coordinates>
+    <panel_attributes>LivingEntity
+--
++ startingHealth: float
++ health: float
+# dead: bool
++ onDeath: System.Action event
+--
+# Start(): void
++ takeHit(damage: float, hitPoint: Vector3, hitDirection: Vector3): void
++ die(): void
++ takeHitFromEnemy(damage: float): void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>716</x>
+      <y>516</y>
+      <w>120</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>GunController
+--
++ weaponHold: Transform
++ guns: Gun[]
+equippedGun: Gun
+--
+Start(): void
++ equipWeapon(gunToEquip: Gun): void
++ equipWeapon(weaponIndex: int): void
++ onTriggerHold(): void
++ onTriggerRelease(): void
++ getHeight: float
++ aim(aimPoint Vector3): void
++ reload(): void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>176</x>
+      <y>276</y>
+      <w>120</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>Menu
+--
++ mainMenuHolder: GameObject
++ optionsMenuHolder: GameObject
++ hiscoresMenuHolder: GameObject
++ highScoreOneText: Text
++ highScoreTwoText: Text
++ highScoreThreeText: Text
++ highScoreFourText: Text
++ highScoreFiveText: Text
++ fullScreenToggle: Toggle
++ volumeSliders: Slider[]
++ resolutionToggles: Toggle[]
++ screenWidths: int[]
+activeIndex: int
+--
+Start(): void
++ play(): void
++ quit(): void
++ optionsMenu(): void
++ mainMenu(): void
++ hiscoresMenu(): void
++ setResolution(i: int): void
++ setMaster(volume: float): void
++ setMusic(volume: float): void
++ setSfx(volume: float): void
++ setFullScreen(isFullscreen: bool): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>712</x>
+      <y>916</y>
+      <w>108</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>MuzzleFlash
+--
++ flashHolder: GameObject
++ flashTime: float
++ flashSprites: Sprite[]
++ spriteRenderers: SpriteRenderer[]
+--
++ active(): void
++ deactivate(): void
++ Start(): void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>848</x>
+      <y>516</y>
+      <w>100</w>
+      <h>52</h>
+    </coordinates>
+    <panel_attributes>PlayerController
+--
+myRigidBody: RigidBody
+thisVelocity: Vector3
+--
+Start(): void
++ move(velocity): void
+FixedUpdate(): void
++ lookAt(lookPoint: Vector3): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>900</x>
+      <y>704</y>
+      <w>140</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>Projectile
+--
++ collisionMask: LayerMask
++ trailColor: Color
++ speed: float
++ damage: float
+life: float
+offSet: float
+--
+Start(): void
+Update(): void
++ setSpeed(newSpeed: float): void
+checkCollisions(moveDistance: float): void
+onHitObject(col: Collider, hitPoint: Vector3): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>580</x>
+      <y>816</y>
+      <w>92</w>
+      <h>68</h>
+    </coordinates>
+    <panel_attributes>Shell (Inherits MonoBehaviour)
+--
++ myRigidBody: RigidBody
++ minForce: float
++ maxForce: float
+lifetime: float
+fadeTime: float
+--
+Start(): void
+fade(): IEnumerator
+Update(): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>572</x>
+      <y>472</y>
+      <w>96</w>
+      <h>188</h>
+    </coordinates>
+    <panel_attributes>Spawner
+--
++ devMode: bool
++ waves: Wave[]
++ powerup: Powerup
+enemiesRemainingToSpawn: int
+timeNextSpawn: float
+campingCheck: float
+nextCheckTime: float
+campThresh: float
+powerUpThreshHold: float
+camping: bool
+disable: bool
+CampPositionOld: Vector3
+currentWave: Wave
+waveNumber: int
+enemiesRemaining: int
+map: MapGenerator
+player: LivingEntity
+playerT: Transform
++ onNewWave: System.Action event
+--
+Start(): void
+Update(): void
+resetPlayer(): void
+spawnEnemy(): IEnumerator
+spawnPowerUp(): IEnumerator
+onEnemyDeath(): void
+onPlayerDeath(): void
+nextWave(): void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>372</x>
+      <y>716</y>
+      <w>76</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>Map
+--
++ mapSize: coord
++ obsPercent: float
++ seed: int
++ minObsHeight: float
++ maxObsHeight: float
++ forground: Color
++ background: Color
++ mapCenter: coord</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>328</x>
+      <y>156</y>
+      <w>76</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>SoundGroup
+--
++ groupID: string
++ group: AudioClip[]</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>500</x>
+      <y>728</y>
+      <w>88</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>Wave
+--
++ infinite: bool
++ enemyCount: int
++ hitsToKillPlayer: int
++ timeBetweenSpawns: float
++ moveSpeed: float
++ enemyHealth: float
++ skinColor: Color</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1132</x>
+      <y>200</y>
+      <w>48</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>MonoBehaviour
+(Unity API)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>768</x>
+      <y>600</y>
+      <w>12</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;120.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>884</x>
+      <y>408</y>
+      <w>128</w>
+      <h>116</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>300.0;270.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>772</x>
+      <y>408</y>
+      <w>124</w>
+      <h>116</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;270.0;290.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>884</x>
+      <y>408</y>
+      <w>16</w>
+      <h>116</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>20.0;270.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>880</x>
+      <y>248</y>
+      <w>12</w>
+      <h>92</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;210.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>880</x>
+      <y>148</y>
+      <w>12</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>600</x>
+      <y>248</y>
+      <w>292</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>710.0;10.0;10.0;280.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>460</x>
+      <y>248</y>
+      <w>432</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>1060.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>768</x>
+      <y>880</y>
+      <w>12</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>820</x>
+      <y>724</y>
+      <w>88</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>200.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>612</x>
+      <y>656</y>
+      <w>52</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>110.0;180.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>664</x>
+      <y>248</y>
+      <w>228</w>
+      <h>260</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>550.0;10.0;10.0;630.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>492</x>
+      <y>524</y>
+      <w>88</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;200.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>416</x>
+      <y>644</y>
+      <w>12</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;180.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>540</x>
+      <y>656</y>
+      <w>80</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>180.0;10.0;10.0;180.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>664</x>
+      <y>452</y>
+      <w>508</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;130.0;1250.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>884</x>
+      <y>408</y>
+      <w>288</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;700.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>364</x>
+      <y>132</y>
+      <w>12</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1244</x>
+      <y>492</y>
+      <w>12</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;120.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>628</x>
+      <y>196</y>
+      <w>192</w>
+      <h>172</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;460.0;410.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>236</x>
+      <y>196</y>
+      <w>404</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>990.0;10.0;10.0;200.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>620</x>
+      <y>196</y>
+      <w>20</w>
+      <h>284</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>30.0;10.0;10.0;690.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>460</x>
+      <y>196</y>
+      <w>180</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>430.0;10.0;10.0;200.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>100</x>
+      <y>196</y>
+      <w>540</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>1330.0;10.0;10.0;200.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>628</x>
+      <y>172</y>
+      <w>100</w>
+      <h>524</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;230.0;1290.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>440</x>
+      <y>112</y>
+      <w>112</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;260.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>280</x>
+      <y>532</y>
+      <w>68</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;150.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1152</x>
+      <y>156</y>
+      <w>12</w>
+      <h>52</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;110.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1176</x>
+      <y>164</y>
+      <w>44</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;90.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1152</x>
+      <y>212</y>
+      <w>12</w>
+      <h>52</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1176</x>
+      <y>204</y>
+      <w>76</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;170.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1176</x>
+      <y>212</y>
+      <w>44</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;90.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1088</x>
+      <y>204</y>
+      <w>52</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>110.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1096</x>
+      <y>164</y>
+      <w>44</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>90.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1100</x>
+      <y>212</y>
+      <w>40</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>80.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+</diagram>

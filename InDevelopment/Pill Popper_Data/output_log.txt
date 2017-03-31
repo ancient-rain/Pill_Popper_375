@@ -2,11 +2,30 @@ Initialize engine version: 5.5.2f1 (3829d7f588f3)
 GfxDevice: creating device client; threaded=1
 Direct3D:
     Version:  Direct3D 11.0 [level 11.0]
-    Renderer: NVIDIA Quadro K1100M    (ID=0xff6)
-    Vendor:   NVIDIA
-    VRAM:     1992 MB
-    Driver:   10.18.13.5362
+    Renderer: Intel(R) HD Graphics Family (ID=0x416)
+    Vendor:   Intel
+    VRAM:     880 MB
+    Driver:   10.18.10.3910
 Begin MonoManager ReloadAssembly
+<<<<<<< HEAD
+Platform assembly: C:\Users\crodyt\Documents\Pill_Popper_375\InDevelopment\Pill Popper_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\crodyt\Documents\Pill_Popper_375\InDevelopment\Pill Popper_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\crodyt\Documents\Pill_Popper_375\InDevelopment\Pill Popper_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\crodyt\Documents\Pill_Popper_375\InDevelopment\Pill Popper_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\crodyt\Documents\Pill_Popper_375\InDevelopment\Pill Popper_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\crodyt\Documents\Pill_Popper_375\InDevelopment\Pill Popper_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\crodyt\Documents\Pill_Popper_375\InDevelopment\Pill Popper_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\crodyt\Documents\Pill_Popper_375\InDevelopment\Pill Popper_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\crodyt\Documents\Pill_Popper_375\InDevelopment\Pill Popper_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\crodyt\Documents\Pill_Popper_375\InDevelopment\Pill Popper_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\crodyt\Documents\Pill_Popper_375\InDevelopment\Pill Popper_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
+Loading C:\Users\crodyt\Documents\Pill_Popper_375\InDevelopment\Pill Popper_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
+Platform assembly: C:\Users\crodyt\Documents\Pill_Popper_375\InDevelopment\Pill Popper_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading C:\Users\crodyt\Documents\Pill_Popper_375\InDevelopment\Pill Popper_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+- Completed reload, in  0.068 seconds
+Platform assembly: C:\Users\crodyt\Documents\Pill_Popper_375\InDevelopment\Pill Popper_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\crodyt\Documents\Pill_Popper_375\InDevelopment\Pill Popper_Data\Managed\System.dll (this message is harmless)
+=======
 Platform assembly: C:\Users\bednartd\Documents\GitHub\Pill_Popper_375\InDevelopment\Pill Popper_Data\Managed\UnityEngine.dll (this message is harmless)
 Loading C:\Users\bednartd\Documents\GitHub\Pill_Popper_375\InDevelopment\Pill Popper_Data\Managed\UnityEngine.dll into Unity Child Domain
 Platform assembly: C:\Users\bednartd\Documents\GitHub\Pill_Popper_375\InDevelopment\Pill Popper_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
@@ -24,6 +43,7 @@ Loading C:\Users\bednartd\Documents\GitHub\Pill_Popper_375\InDevelopment\Pill Po
 - Completed reload, in  0.029 seconds
 Platform assembly: C:\Users\bednartd\Documents\GitHub\Pill_Popper_375\InDevelopment\Pill Popper_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\bednartd\Documents\GitHub\Pill_Popper_375\InDevelopment\Pill Popper_Data\Managed\System.dll (this message is harmless)
+>>>>>>> 45d5590f6fdcc2d02ab52a99ab7ceeaa410f0c17
 OnLevelWasLoaded was found on MusicManager
 This message has been deprecated and will be removed in a later version of Unity.
 Add a delegate to SceneManager.sceneLoaded instead to get notifications after scene loading has completed
@@ -34,7 +54,52 @@ Add a delegate to SceneManager.sceneLoaded instead to get notifications after sc
 <RI> Input initialized.
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initialized touch support.
+<<<<<<< HEAD
 UnloadTime: 1.703341 ms
+=======
+<<<<<<< HEAD
+UnloadTime: 2.425572 ms
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 2434 -> priority: 1 
+  Thread -> id: 2684 -> priority: 1 
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 7.867287 ms
+
+Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 2626.
+Total: 0.813370 ms (FindLiveObjects: 0.154377 ms CreateObjectMapping: 0.073981 ms MarkObjects: 0.564484 ms  DeleteObjects: 0.020099 ms)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.442001 ms
+
+Unloading 199 unused Assets to reduce memory usage. Loaded Objects now: 2636.
+Total: 1.519831 ms (FindLiveObjects: 0.168062 ms CreateObjectMapping: 0.082962 ms MarkObjects: 0.567050 ms  DeleteObjects: 0.701329 ms)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.182851 ms
+
+Unloading 185 unused Assets to reduce memory usage. Loaded Objects now: 2639.
+Total: 1.567727 ms (FindLiveObjects: 0.167207 ms CreateObjectMapping: 0.092370 ms MarkObjects: 0.611524 ms  DeleteObjects: 0.696197 ms)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.182851 ms
+
+Unloading 133 unused Assets to reduce memory usage. Loaded Objects now: 2642.
+Total: 1.218773 ms (FindLiveObjects: 0.164213 ms CreateObjectMapping: 0.079968 ms MarkObjects: 0.566194 ms  DeleteObjects: 0.407540 ms)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.170022 ms
+
+Unloading 145 unused Assets to reduce memory usage. Loaded Objects now: 2645.
+Total: 1.474501 ms (FindLiveObjects: 0.211681 ms CreateObjectMapping: 0.081251 ms MarkObjects: 0.662413 ms  DeleteObjects: 0.518299 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.164035 ms
+
+Unloading 427 unused Assets to reduce memory usage. Loaded Objects now: 621.
+Total: 1.478778 ms (FindLiveObjects: 0.056020 ms CreateObjectMapping: 0.051316 ms MarkObjects: 0.447311 ms  DeleteObjects: 0.923701 ms)
+=======
+UnloadTime: 2.344393 ms
+>>>>>>> 28500e3c66feb291e868e2f191de0a58e87af658
 Setting up 2 worker threads for Enlighten.
   Thread -> id: 93c -> priority: 1 
   Thread -> id: 3830 -> priority: 1 
@@ -47,6 +112,12 @@ Total: 0.539270 ms (FindLiveObjects: 0.112472 ms CreateObjectMapping: 0.046186 m
 Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
 UnloadTime: 2.452589 ms
 
+<<<<<<< HEAD
 Unloading 418 unused Assets to reduce memory usage. Loaded Objects now: 609.
 Total: 1.106765 ms (FindLiveObjects: 0.058160 ms CreateObjectMapping: 0.039344 ms MarkObjects: 0.358373 ms  DeleteObjects: 0.650032 ms)
+=======
+Unloading 819 unused Assets to reduce memory usage. Loaded Objects now: 615.
+Total: 2.813100 ms (FindLiveObjects: 0.067141 ms CreateObjectMapping: 0.069707 ms MarkObjects: 0.422093 ms  DeleteObjects: 2.254158 ms)
+>>>>>>> 45d5590f6fdcc2d02ab52a99ab7ceeaa410f0c17
+>>>>>>> 28500e3c66feb291e868e2f191de0a58e87af658
 

@@ -21,7 +21,7 @@ Platform assembly: C:\Users\bednartd\Documents\GitHub\Pill_Popper_375\InDevelopm
 Loading C:\Users\bednartd\Documents\GitHub\Pill_Popper_375\InDevelopment\Pill Popper_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
 Platform assembly: C:\Users\bednartd\Documents\GitHub\Pill_Popper_375\InDevelopment\Pill Popper_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
 Loading C:\Users\bednartd\Documents\GitHub\Pill_Popper_375\InDevelopment\Pill Popper_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
-- Completed reload, in  0.030 seconds
+- Completed reload, in  0.029 seconds
 Platform assembly: C:\Users\bednartd\Documents\GitHub\Pill_Popper_375\InDevelopment\Pill Popper_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\bednartd\Documents\GitHub\Pill_Popper_375\InDevelopment\Pill Popper_Data\Managed\System.dll (this message is harmless)
 OnLevelWasLoaded was found on MusicManager
@@ -32,71 +32,21 @@ Add a delegate to SceneManager.sceneLoaded instead to get notifications after sc
 
 <RI> Initializing input.
 <RI> Input initialized.
-desktop: 1920x1080 60Hz; virtual: 4920x1920 at -1080,0
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initialized touch support.
-UnloadTime: 2.344393 ms
+UnloadTime: 1.703341 ms
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 3f2c -> priority: 1 
-  Thread -> id: 429c -> priority: 1 
+  Thread -> id: 93c -> priority: 1 
+  Thread -> id: 3830 -> priority: 1 
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 2.719444 ms
+UnloadTime: 4.838892 ms
 
 Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 2626.
-Total: 0.608122 ms (FindLiveObjects: 0.106913 ms CreateObjectMapping: 0.059443 ms MarkObjects: 0.424659 ms  DeleteObjects: 0.016678 ms)
-
-NullReferenceException
-  at (wrapper managed-to-native) UnityEngine.Transform:INTERNAL_get_position (UnityEngine.Vector3&)
-  at UnityEngine.Transform.get_position () [0x00000] in <filename unknown>:0 
-  at Spawner+<spawnPoewerup>c__Iterator1.MoveNext () [0x00000] in <filename unknown>:0 
-  at UnityEngine.SetupCoroutine.InvokeMoveNext (IEnumerator enumerator, IntPtr returnValueAddress) [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NullReferenceException
-  at (wrapper managed-to-native) UnityEngine.Transform:INTERNAL_get_position (UnityEngine.Vector3&)
-  at UnityEngine.Transform.get_position () [0x00000] in <filename unknown>:0 
-  at Spawner+<spawnPoewerup>c__Iterator1.MoveNext () [0x00000] in <filename unknown>:0 
-  at UnityEngine.SetupCoroutine.InvokeMoveNext (IEnumerator enumerator, IntPtr returnValueAddress) [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
+Total: 0.539270 ms (FindLiveObjects: 0.112472 ms CreateObjectMapping: 0.046186 ms MarkObjects: 0.366498 ms  DeleteObjects: 0.013684 ms)
 
 Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 5.850719 ms
+UnloadTime: 2.452589 ms
 
-Unloading 2829 unused Assets to reduce memory usage. Loaded Objects now: 609.
-Total: 19.664762 ms (FindLiveObjects: 0.399000 ms CreateObjectMapping: 0.475550 ms MarkObjects: 1.033209 ms  DeleteObjects: 17.756147 ms)
-
-Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.546540 ms
-
-Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 2630.
-Total: 0.628222 ms (FindLiveObjects: 0.097504 ms CreateObjectMapping: 0.059443 ms MarkObjects: 0.457160 ms  DeleteObjects: 0.014112 ms)
-
-NullReferenceException
-  at (wrapper managed-to-native) UnityEngine.Transform:INTERNAL_get_position (UnityEngine.Vector3&)
-  at UnityEngine.Transform.get_position () [0x00000] in <filename unknown>:0 
-  at Spawner+<spawnPoewerup>c__Iterator1.MoveNext () [0x00000] in <filename unknown>:0 
-  at UnityEngine.SetupCoroutine.InvokeMoveNext (IEnumerator enumerator, IntPtr returnValueAddress) [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.531852 ms
-
-Unloading 538 unused Assets to reduce memory usage. Loaded Objects now: 2639.
-Total: 2.890933 ms (FindLiveObjects: 0.125729 ms CreateObjectMapping: 0.119742 ms MarkObjects: 0.517032 ms  DeleteObjects: 2.128000 ms)
-
-NullReferenceException
-  at (wrapper managed-to-native) UnityEngine.Transform:INTERNAL_get_position (UnityEngine.Vector3&)
-  at UnityEngine.Transform.get_position () [0x00000] in <filename unknown>:0 
-  at Spawner+<spawnPoewerup>c__Iterator1.MoveNext () [0x00000] in <filename unknown>:0 
-  at UnityEngine.SetupCoroutine.InvokeMoveNext (IEnumerator enumerator, IntPtr returnValueAddress) [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 2.756650 ms
-
-Unloading 819 unused Assets to reduce memory usage. Loaded Objects now: 615.
-Total: 2.813100 ms (FindLiveObjects: 0.067141 ms CreateObjectMapping: 0.069707 ms MarkObjects: 0.422093 ms  DeleteObjects: 2.254158 ms)
+Unloading 418 unused Assets to reduce memory usage. Loaded Objects now: 609.
+Total: 1.106765 ms (FindLiveObjects: 0.058160 ms CreateObjectMapping: 0.039344 ms MarkObjects: 0.358373 ms  DeleteObjects: 0.650032 ms)
 

@@ -9,6 +9,11 @@ public class Menu : MonoBehaviour {
     public GameObject mainMenuHolder;
     public GameObject optionsMenuHolder;
     public GameObject hiscoresMenuHolder;
+    public Text highscoreOneText;
+    public Text highscoreTwoText;
+    public Text highscoreThreeText;
+    public Text highscoreFourText;
+    public Text highscoreFiveText;
     public Toggle fullscreenToggle;
     public Slider[] volumeSliders;
     public Toggle[] resolutionToggles;
@@ -20,6 +25,12 @@ public class Menu : MonoBehaviour {
     {
         activeIndex = PlayerPrefs.GetInt("Screen res Index");
         bool isFullscreen = PlayerPrefs.GetInt("Fullscreen") == 1;
+
+        highscoreOneText.text = PlayerPrefs.GetInt("Highscore1").ToString();
+        highscoreTwoText.text = PlayerPrefs.GetInt("Highscore2").ToString();;
+        highscoreThreeText.text = PlayerPrefs.GetInt("Highscore3").ToString(); ;
+        highscoreFourText.text = PlayerPrefs.GetInt("Highscore4").ToString(); ;
+        highscoreFiveText.text = PlayerPrefs.GetInt("Highscore5").ToString(); ;
 
         volumeSliders[0].value = AudioManager.instance.masterVolumePercent;
         volumeSliders[1].value = AudioManager.instance.musicVolumePercent;

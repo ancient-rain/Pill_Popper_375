@@ -18,6 +18,7 @@ public class ScoreKeeper : MonoBehaviour {
 
     void onEnemyKilled()
     {
+        int wave = PlayerPrefs.GetInt("Wave");
         if(Time.time < lastTimeEnemyWasKilled + streakExp)
         {
             currentStreakCount++;
@@ -27,7 +28,7 @@ public class ScoreKeeper : MonoBehaviour {
             currentStreakCount = 1;
         }
         lastTimeEnemyWasKilled = Time.time;
-        score += 5 * currentStreakCount;
+        score += (5 * wave) + (currentStreakCount * wave);
     }
 
     void onPlayerDeath()

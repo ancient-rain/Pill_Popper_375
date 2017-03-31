@@ -7,6 +7,7 @@ Direct3D:
     VRAM:     880 MB
     Driver:   10.18.10.3910
 Begin MonoManager ReloadAssembly
+<<<<<<< HEAD
 Platform assembly: C:\Users\crodyt\Documents\Pill_Popper_375\InDevelopment\Pill Popper_Data\Managed\UnityEngine.dll (this message is harmless)
 Loading C:\Users\crodyt\Documents\Pill_Popper_375\InDevelopment\Pill Popper_Data\Managed\UnityEngine.dll into Unity Child Domain
 Platform assembly: C:\Users\crodyt\Documents\Pill_Popper_375\InDevelopment\Pill Popper_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
@@ -24,6 +25,25 @@ Loading C:\Users\crodyt\Documents\Pill_Popper_375\InDevelopment\Pill Popper_Data
 - Completed reload, in  0.068 seconds
 Platform assembly: C:\Users\crodyt\Documents\Pill_Popper_375\InDevelopment\Pill Popper_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\crodyt\Documents\Pill_Popper_375\InDevelopment\Pill Popper_Data\Managed\System.dll (this message is harmless)
+=======
+Platform assembly: C:\Users\bednartd\Documents\GitHub\Pill_Popper_375\InDevelopment\Pill Popper_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\bednartd\Documents\GitHub\Pill_Popper_375\InDevelopment\Pill Popper_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\bednartd\Documents\GitHub\Pill_Popper_375\InDevelopment\Pill Popper_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\bednartd\Documents\GitHub\Pill_Popper_375\InDevelopment\Pill Popper_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\bednartd\Documents\GitHub\Pill_Popper_375\InDevelopment\Pill Popper_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\bednartd\Documents\GitHub\Pill_Popper_375\InDevelopment\Pill Popper_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\bednartd\Documents\GitHub\Pill_Popper_375\InDevelopment\Pill Popper_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\bednartd\Documents\GitHub\Pill_Popper_375\InDevelopment\Pill Popper_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\bednartd\Documents\GitHub\Pill_Popper_375\InDevelopment\Pill Popper_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\bednartd\Documents\GitHub\Pill_Popper_375\InDevelopment\Pill Popper_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\bednartd\Documents\GitHub\Pill_Popper_375\InDevelopment\Pill Popper_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
+Loading C:\Users\bednartd\Documents\GitHub\Pill_Popper_375\InDevelopment\Pill Popper_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
+Platform assembly: C:\Users\bednartd\Documents\GitHub\Pill_Popper_375\InDevelopment\Pill Popper_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading C:\Users\bednartd\Documents\GitHub\Pill_Popper_375\InDevelopment\Pill Popper_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+- Completed reload, in  0.030 seconds
+Platform assembly: C:\Users\bednartd\Documents\GitHub\Pill_Popper_375\InDevelopment\Pill Popper_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\bednartd\Documents\GitHub\Pill_Popper_375\InDevelopment\Pill Popper_Data\Managed\System.dll (this message is harmless)
+>>>>>>> 45d5590f6fdcc2d02ab52a99ab7ceeaa410f0c17
 OnLevelWasLoaded was found on MusicManager
 This message has been deprecated and will be removed in a later version of Unity.
 Add a delegate to SceneManager.sceneLoaded instead to get notifications after scene loading has completed
@@ -34,6 +54,7 @@ Add a delegate to SceneManager.sceneLoaded instead to get notifications after sc
 <RI> Input initialized.
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initialized touch support.
+<<<<<<< HEAD
 UnloadTime: 2.425572 ms
 Setting up 2 worker threads for Enlighten.
   Thread -> id: 2434 -> priority: 1 
@@ -73,4 +94,71 @@ UnloadTime: 1.164035 ms
 
 Unloading 427 unused Assets to reduce memory usage. Loaded Objects now: 621.
 Total: 1.478778 ms (FindLiveObjects: 0.056020 ms CreateObjectMapping: 0.051316 ms MarkObjects: 0.447311 ms  DeleteObjects: 0.923701 ms)
+=======
+UnloadTime: 2.344393 ms
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 3f2c -> priority: 1 
+  Thread -> id: 429c -> priority: 1 
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.719444 ms
+
+Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 2626.
+Total: 0.608122 ms (FindLiveObjects: 0.106913 ms CreateObjectMapping: 0.059443 ms MarkObjects: 0.424659 ms  DeleteObjects: 0.016678 ms)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Transform:INTERNAL_get_position (UnityEngine.Vector3&)
+  at UnityEngine.Transform.get_position () [0x00000] in <filename unknown>:0 
+  at Spawner+<spawnPoewerup>c__Iterator1.MoveNext () [0x00000] in <filename unknown>:0 
+  at UnityEngine.SetupCoroutine.InvokeMoveNext (IEnumerator enumerator, IntPtr returnValueAddress) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Transform:INTERNAL_get_position (UnityEngine.Vector3&)
+  at UnityEngine.Transform.get_position () [0x00000] in <filename unknown>:0 
+  at Spawner+<spawnPoewerup>c__Iterator1.MoveNext () [0x00000] in <filename unknown>:0 
+  at UnityEngine.SetupCoroutine.InvokeMoveNext (IEnumerator enumerator, IntPtr returnValueAddress) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 5.850719 ms
+
+Unloading 2829 unused Assets to reduce memory usage. Loaded Objects now: 609.
+Total: 19.664762 ms (FindLiveObjects: 0.399000 ms CreateObjectMapping: 0.475550 ms MarkObjects: 1.033209 ms  DeleteObjects: 17.756147 ms)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.546540 ms
+
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 2630.
+Total: 0.628222 ms (FindLiveObjects: 0.097504 ms CreateObjectMapping: 0.059443 ms MarkObjects: 0.457160 ms  DeleteObjects: 0.014112 ms)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Transform:INTERNAL_get_position (UnityEngine.Vector3&)
+  at UnityEngine.Transform.get_position () [0x00000] in <filename unknown>:0 
+  at Spawner+<spawnPoewerup>c__Iterator1.MoveNext () [0x00000] in <filename unknown>:0 
+  at UnityEngine.SetupCoroutine.InvokeMoveNext (IEnumerator enumerator, IntPtr returnValueAddress) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.531852 ms
+
+Unloading 538 unused Assets to reduce memory usage. Loaded Objects now: 2639.
+Total: 2.890933 ms (FindLiveObjects: 0.125729 ms CreateObjectMapping: 0.119742 ms MarkObjects: 0.517032 ms  DeleteObjects: 2.128000 ms)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Transform:INTERNAL_get_position (UnityEngine.Vector3&)
+  at UnityEngine.Transform.get_position () [0x00000] in <filename unknown>:0 
+  at Spawner+<spawnPoewerup>c__Iterator1.MoveNext () [0x00000] in <filename unknown>:0 
+  at UnityEngine.SetupCoroutine.InvokeMoveNext (IEnumerator enumerator, IntPtr returnValueAddress) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.756650 ms
+
+Unloading 819 unused Assets to reduce memory usage. Loaded Objects now: 615.
+Total: 2.813100 ms (FindLiveObjects: 0.067141 ms CreateObjectMapping: 0.069707 ms MarkObjects: 0.422093 ms  DeleteObjects: 2.254158 ms)
+>>>>>>> 45d5590f6fdcc2d02ab52a99ab7ceeaa410f0c17
 

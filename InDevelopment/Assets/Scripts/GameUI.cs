@@ -13,7 +13,6 @@ public class GameUI : MonoBehaviour {
     public Text newWaveTitle;
     public Text newWaveEnemyCount;
     public Text scoreUI;
-    public Text highscoreUI;
     public Text highscoreValUI;
     public Text gameOverScoreUI;
     Spawner spawner;
@@ -47,7 +46,6 @@ public class GameUI : MonoBehaviour {
 
         StartCoroutine(fade(Color.clear, new Color(0, 0, 0, 0.95f), 1));
         scoreUI.gameObject.SetActive(false);
-        highscoreUI.gameObject.SetActive(false);
         highscoreValUI.gameObject.SetActive(false);
         healthBar.parent.gameObject.SetActive(false);
         gameOverScoreUI.text = scoreUI.text;
